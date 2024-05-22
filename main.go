@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	n := 10
+	n := "Salom"
 	Printer(n)
 }
 
-func Printer(n int) {
-	for i := 0; i < n; i++ {
+func Printer(n string) {
+	for i := 0; i < len(n); i++ {
 		fmt.Println(i)
 	}
 }
