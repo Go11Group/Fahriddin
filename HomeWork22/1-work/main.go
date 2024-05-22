@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	n := "Salom"
+	n := 10
 
-	for i := 0; i < len(n); i++ {
+	for i := 0; i < n; i++ {
 		fmt.Println(i)
 	}
 }
