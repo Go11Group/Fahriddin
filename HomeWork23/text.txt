@@ -1,0 +1,63 @@
+--Order by 
+Biz bundan malumotlarni ortib borish tartibida yoki kamayib borish tartibida ma'lum bir column 
+bo'yicha saralab olish uchun foydalanamiz:ASC o'sib borish tartibida DESC kamayib borish tartibida
+Kod :
+Select * from Go11 Order By id ASC;
+Bu id bo'yicha o'sib borishi bo'yicha ekranga ma'lumotlarni chiqaradi.
+Select * from Go11 Order By id DESC;
+Bu id bo'yicha kamayib borishi bo'yicha ekranga ma'lumotlarni chiqaradi.
+
+-- Group By
+Biz bundan bir xil malumotlarni guruhlarga ajratib ishlatishda foydalanamiz.
+Kod:
+Select sum(age), course from go11 Group By course; 
+Having esa biz Group By da ishlash davomida ularni filtrlash uchun yordam beradi
+Kod:
+Select sum(age), course from go11 Group By course Having course = 'Golang 11';
+
+--Join 
+Biz joinlardan 2- yoki Select sum(age), course from go11 Group By course; undan kop table larni birlashtirishda foydalanamiz Ularni 4 xil turi mavjud:
+1.Inner Join
+Inner join bzga bir xil bolgan malumotlatni ekranga chiqarib beradi.
+Kod : 
+select * from go11
+inner join fn54
+ON go11.Name = fn54.Name;
+
+2.Left join
+Bunda bizga chapdegi table ni hamma malumoti chiqadi va chapdegi bn bir xil bolgan ong tengdegi 
+ya'ni 2-table dagi bir xil bo'lgan ma'lumotlar ham chiqadi
+Kod : 
+select * from go11
+Left join fn54
+ON go11.Name = fn54.Name;
+
+3.Right join 
+Bu esa Left Join teskarisi yani yuqoridegini teskarisi o'ng tomondegi barcha ma'lumotlar chiqadi
+chapdegilarni esa bir xil bolganlarigina chiqadi
+Kod:
+select * from go11
+Right join fn54
+ON go11.Name = fn54.Name;
+
+4.Full Join
+Ikkala jadvalda moslik yani bir xil malumot topilsa barcha ma'lumotlar ekranga chiqadi.
+Kod:
+select * from go11
+Full join fn54
+ON go11.Name = fn54.Name;
+
+
+--Update
+Ushbu buyruq orqali biz mavjud tabledagi ma'lumotni ozgartirishimiz mumkin.Bizga bu ma'lumotni ozgartirishimiz
+va yangilashimiz uchun foydalidir.
+Kod:
+Update go11
+set age = 21
+where id = 5;
+
+--Delete
+Bu bizga jadvalda bor ma'lumotlarni o'chirishga yordam beradi va bizga bunda WHERE orqali
+bajaramiz aks holda barcha ma'lumotlar o'chib ketadi.
+Kod:
+delete from go11 where id = 9;
