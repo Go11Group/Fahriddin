@@ -1,15 +1,3 @@
--- Create table Cars (
---     Id uuid Primary key not null default gen_random_uuid(),
---     Name varchar not null,
---     Year int not null,
---     Brand varchar
--- );
-
--- Create table Users (
---     Id uuid Primary key not null default gen_random_uuid(),
---     Name varchar,
---     Car_id uuid not null references Cars(id)
--- );
 Create table Users(
     Id UUID Primary Key Not Null default gen_random_uuid(),
     Username Varchar Not null,
