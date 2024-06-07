@@ -16,15 +16,15 @@ type Products struct {
 func NewHandler(users Users, products Products) *http.ServeMux {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/CreateUsers/", users.UserCreate)
-	mux.HandleFunc("/ReadUsers/",users.UserRead)
-	mux.HandleFunc("/UpdateUsers/",users.UserUpdate)
-	mux.HandleFunc("/DeleteUsers/",users.UserDelete)
+	mux.HandleFunc("POST /CreateUsers/", users.UserCreate)
+	mux.HandleFunc("GET /ReadUsers/",users.UserRead)
+	mux.HandleFunc("PUT /UpdateUsers/",users.UserUpdate)
+	mux.HandleFunc("DELETE /DeleteUsers/",users.UserDelete)
 
-	mux.HandleFunc("/CreateProducts/", products.ProductCreate)
-	mux.HandleFunc("/ReadProducts/", products.ProductRead)
-	mux.HandleFunc("/UpdateProducts/", products.ProductUpdate)
-	mux.HandleFunc("/DeleteProducts/", products.ProductDelete)
+	mux.HandleFunc("POST /CreateProducts/", products.ProductCreate)
+	mux.HandleFunc("GET /ReadProducts/", products.ProductRead)
+	mux.HandleFunc("PUT /UpdateProducts/", products.ProductUpdate)
+	mux.HandleFunc("DELETE /DeleteProducts/", products.ProductDelete)
 
 	return mux
 }
