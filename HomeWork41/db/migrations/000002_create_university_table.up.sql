@@ -4,5 +4,4 @@ CREATE TABLE Universty(
     Title varchar NOT NULL,
     Description varchar NOT NULL
 );
-
-migrate -database 'postgres://postgres:0412@localhost:5432/nt?sslmode=disable'
+ 

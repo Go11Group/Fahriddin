@@ -1,0 +1,1 @@
+INSERT INTO Users(Id,Surname,Lastname,Email,Password,Age) VALUES("Fahriddin","Rahimberdiyev","fahriddinrahimberdiyev@gmail.com","0412",19)

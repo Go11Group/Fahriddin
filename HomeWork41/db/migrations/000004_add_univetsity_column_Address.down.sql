@@ -1,0 +1,1 @@
+ALTER TABLE Universty DROP COLUMN Address; 

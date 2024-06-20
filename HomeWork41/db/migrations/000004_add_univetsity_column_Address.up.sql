@@ -1,0 +1,1 @@
+ALTER TABLE Universty ADD COLUMN Address varchar;
