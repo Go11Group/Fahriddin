@@ -1,4 +1,4 @@
-package storage
+package postgres
 
 import (
 	"database/sql"
@@ -41,7 +41,6 @@ func (s *StationRepo) GetById(id string) (model.Station, error) {
 	return station, nil
 }
 
-// Update qilishda filter qib ozgartiradi
 type UpdateStation struct {
 	Id   *string `json:"id"`
 	Name *string `json:"name"`
@@ -69,7 +68,7 @@ func (s *StationRepo) Update(updateFilter UpdateStation) error {
 	}
 
 	query = `
-	  UPDATE Courses SET 
+	  UPDATE Station SET 
 	`
 
 	if updateFilter.Name != nil {
@@ -119,7 +118,7 @@ func (s *StationRepo) GetAll(fStation model.FilterStation) ([]model.Station, err
 		filter string
 	)
 
-	query := "SELECT id,name FROM courses WHERE true "
+	query := "SELECT id,name FROM Station WHERE true "
 
 	if fStation.Name != "" {
 		params["name"] = fStation.Name

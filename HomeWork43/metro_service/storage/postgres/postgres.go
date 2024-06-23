@@ -1,4 +1,4 @@
-package storage
+package postgres
 
 import (
 	"database/sql"
@@ -11,8 +11,8 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	dbname   = "go11"
-	password = "pass"
+	dbname   = "nt"
+	password = "0412"
 )
 
 func ConnectDB() (*sql.DB, error) {

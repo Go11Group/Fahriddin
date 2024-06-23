@@ -4,3 +4,4 @@ CREATE TABLE Users(
     Phone VARCHAR NOT NULL,
     Age INT NOT NULL
 );
+
