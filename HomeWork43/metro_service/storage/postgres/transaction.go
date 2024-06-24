@@ -12,8 +12,8 @@ type TransactionRepo struct {
 	DB *sql.DB
 }
 
-func NewTransactionRepo(db *sql.DB) *TerminalRepo {
-	return &TerminalRepo{DB: db}
+func NewTransactionRepo(db *sql.DB) *TransactionRepo {
+	return &TransactionRepo{DB: db}
 }
 
 func (t *TransactionRepo) Create(transaction model.Transaction) error {
