@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	pb "my_module/genproto/library"
 	"time"
 
@@ -10,7 +11,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.NewClient("localhost:707", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient("localhost:7070", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		panic(err)
 	}
@@ -19,10 +20,19 @@ func main() {
 
 	c := pb.NewLibraryClient(conn)
 
-	conte,consel := context.WithTimeout(context.Background(),time.Second)
+	contex,consel := context.WithTimeout(context.Background(),time.Second)
 
 	defer consel()
 
-	
+	book := pb.AddBookRequest{
+		Title: "Xamsa",
+		Author: "AlisherNavoiy",
+		YearPublished: 1744,
+	}
+	res,err := c.AddBook(contex,&book)
+	if err != nil{
+		panic(err)
+	}
+	fmt.Println(res)
 
 }

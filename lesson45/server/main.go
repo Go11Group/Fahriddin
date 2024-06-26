@@ -49,8 +49,8 @@ func (s *Server)AddBook(ctx context.Context, req *pb.AddBookRequest)(*pb.AddBook
 	defer tr.Commit()
 
 	result := pb.AddBookResponse{}
-	row := s.DB.QueryRow("INSER INTO Book(title,author,year_published) VALUES($1,$2) returning id",req.Title,req.Author,req.YearPublished)
-	err = row.Scan(result.BookId)
+	row := s.DB.QueryRow("INSERT INTO Book(title,author,year_published) VALUES($1,$2,$3) returning id",req.Title,req.Author,req.YearPublished)
+	err = row.Scan(&result.BookId)
 	if err != nil{
 		return nil,err
 	}
