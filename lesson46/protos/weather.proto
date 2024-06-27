@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package weather;
+
+service WeatherService {
+    rpc GetCurrentWeather (WeatherRequest) returns (WeatherResponse);
+    rpc GetWeatherForecast (ForecastRequest) returns (ForecastResponse);
+    rpc ReportWeatherCondition (ConditionReport) returns (ReportResponse);
+}
+
+message WeatherRequest {
+    string location = 1;
+}
+
+message WeatherResponse {
+    float temperature = 1;
+    float humidity = 2;
+    float wind_speed = 3;
+}
+
+message ForecastRequest {
+    string location = 1;
+    int32 days = 2;
+}
+
+message ForecastResponse {
+    repeated WeatherResponse forecast = 1;
+}
+
+message ConditionReport {
+    string location = 1;
+    string condition = 2;
+}
+
+message ReportResponse {
+    bool success = 1;
+}

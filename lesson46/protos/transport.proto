@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package transport;
+
+service TransportService {
+    rpc GetBusSchedule (BusScheduleRequest) returns (BusScheduleResponse);
+    rpc TrackBusLocation (BusLocationRequest) returns (BusLocationResponse);
+    rpc ReportTrafficJam (TrafficJamReport) returns (ReportResponse);
+}
+
+message BusScheduleRequest {
+    string bus_number = 1;
+}
+
+message BusScheduleResponse {
+    repeated string schedule = 1;
+}
+
+message BusLocationRequest {
+    string bus_number = 1;
+}
+
+message BusLocationResponse {
+    string location = 1;
+}
+
+message TrafficJamReport {
+    string location = 1;
+    string description = 2;
+}
+
+message ReportResponse {
+    bool success = 1;
+}
