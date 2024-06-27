@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "genproto/weather";
+
 package weather;
 
 service WeatherService {
@@ -15,7 +17,7 @@ message WeatherRequest {
 message WeatherResponse {
     float temperature = 1;
     float humidity = 2;
-    float wind_speed = 3;
+    float windSpeed = 3;
 }
 
 message ForecastRequest {

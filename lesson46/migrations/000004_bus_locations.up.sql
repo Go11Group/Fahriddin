@@ -1,0 +1,6 @@
+CREATE TABLE bus_locations (
+    id SERIAL PRIMARY KEY,
+    bus_number VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    tracked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
