@@ -20,17 +20,17 @@ func main() {
 
 	c := pb.NewLibraryClient(conn)
 
-	contex,consel := context.WithTimeout(context.Background(),time.Second)
+	contex, consel := context.WithTimeout(context.Background(), time.Second)
 
 	defer consel()
 
 	book := pb.AddBookRequest{
-		Title: "Xamsa",
-		Author: "AlisherNavoiy",
-		YearPublished: 1744,
+		Title:         "Layli va Majnun",
+		Author:        "AlisherNavoiy",
+		YearPublished: 1544,
 	}
-	res,err := c.AddBook(contex,&book)
-	if err != nil{
+	res, err := c.AddBook(contex, &book)
+	if err != nil {
 		panic(err)
 	}
 	fmt.Println(res)
