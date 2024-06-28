@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS Bus(Number int, from varchar, to varchar, location varchar, traffic_stat boolean);

@@ -1,0 +1,27 @@
+1-service: "WeatherService"
+Bu xizmat ob-havo ma'lumotlarini boshqaradi.
+
+RPC metodlari:
+
+1. GetCurrentWeather
+2. GetWeatherForecast
+3. ReportWeatherCondition
+
+2-service: "TransportService"
+Bu xizmat shahar transporti bilan bog'liq ma'lumotlarni boshqaradi.
+
+RPC metodlari:
+
+1. GetBusSchedule
+2. TrackBusLocation
+3. ReportTrafficJam
+
+Vazifa:
+
+1. Ikkala xizmat uchun proto fayllarini yarating.
+2. Server va client uchun Golang kodlarini yozing.
+3. Har bir RPC metodi uchun oddiy mantiq yarating. Masalan:
+    - GetCurrentWeather: harorat, namlik va shamol tezligini qaytaradi.
+    - GetBusSchedule: berilgan avtobus raqami uchun jadval qaytaradi.
+    - ReportTrafficJam: foydalanuvchilar transport tirbandligi haqida xabar berishlari mumkin.
+4. Client tomonidan barcha metodlarni chaqirish uchun oddiy CLI dasturini yarating.

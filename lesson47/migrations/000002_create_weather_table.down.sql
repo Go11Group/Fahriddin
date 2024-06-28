@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS WeatherDay;
+DROP TABLE IF EXISTS WeatherTime;
