@@ -5,35 +5,27 @@ option go_package = "genproto/weather";
 package weather;
 
 service WeatherService {
-    rpc GetCurrentWeather (WeatherRequest) returns (WeatherResponse);
-    rpc GetWeatherForecast (ForecastRequest) returns (ForecastResponse);
-    rpc ReportWeatherCondition (ConditionReport) returns (ReportResponse);
+    rpc GetCurrentWeather (time) returns (weather);
+    rpc GetWeatherForecast (day) returns (weather);
+    rpc ReportWeatherCondition (weather) returns (status);
 }
 
-message WeatherRequest {
-    string location = 1;
+message time{
+    string time = 1;
 }
 
-message WeatherResponse {
-    float temperature = 1;
-    float humidity = 2;
-    float windSpeed = 3;
+message weather{
+    string weather = 1;
+    int32 tempratura = 2;
+    int32 damp = 3;
+    int32 wind = 4;
+    string time = 5;
 }
 
-message ForecastRequest {
-    string location = 1;
-    int32 days = 2;
+message day{
+    string day = 1;
 }
 
-message ForecastResponse {
-    repeated WeatherResponse forecast = 1;
-}
-
-message ConditionReport {
-    string location = 1;
-    string condition = 2;
-}
-
-message ReportResponse {
-    bool success = 1;
+message status{
+    bool status = 1;
 }

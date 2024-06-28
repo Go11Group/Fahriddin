@@ -5,32 +5,27 @@ option go_package = "genproto/transport";
 package transport;
 
 service TransportService {
-    rpc GetBusSchedule (BusScheduleRequest) returns (BusScheduleResponse);
-    rpc TrackBusLocation (BusLocationRequest) returns (BusLocationResponse);
-    rpc ReportTrafficJam (TrafficJamReport) returns (ReportResponse);
+    rpc GetBusSchedule (number) returns (buss);
+    rpc TrackBusLocation (number) returns (location);
+    rpc ReportTrafficJam (location) returns (status);
 }
 
-message BusScheduleRequest {
-    string bus_number = 1;
+message number{
+    int32 number = 1;
 }
 
-message BusScheduleResponse {
-    repeated string schedule = 1;
+message buss{
+    int32 number = 1;
+    string from = 2;
+    string to = 3;
+    location loc = 4;
+    status trafficStat = 5;
 }
 
-message BusLocationRequest {
-    string bus_number = 1;
+message location{
+    string station = 1;
 }
 
-message BusLocationResponse {
-    string location = 1;
-}
-
-message TrafficJamReport {
-    string location = 1;
-    string description = 2;
-}
-
-message ReportResponse {
-    bool success = 1;
+message status{
+    bool status = 1;
 }

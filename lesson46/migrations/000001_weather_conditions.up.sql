@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS weather_conditions (
-    id SERIAL PRIMARY KEY,
-    location VARCHAR(255) NOT NULL,
-    condition VARCHAR(255) NOT NULL,
-    reported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
